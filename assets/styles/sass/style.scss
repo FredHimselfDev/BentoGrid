@@ -1,0 +1,416 @@
+// -------------------------- BASICS
+
+:root {
+  --purple100: hsl(254, 88%, 90%);
+  --purple500: hsl(256, 67%, 59%);
+  --yellow100: hsl(31, 66%, 93%);
+  --yellow500: hsl(39, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+
+html {
+  font: 400 18px 'DM Sans', sans-serif;
+}
+
+body {
+  background-color: hsl(0, 0%, 96%);
+  color: var(--black);
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 83px 16px;
+}
+
+// -------------------------- GRID
+
+.gridContent {
+  display: grid;
+  width: 100%;
+  max-width: 1120px;
+  grid-template-areas: "cardGroup card-1 card-1 card-4"
+                       "cardGroup card-2 card-3 card-4"
+                       "cardGroup card-6 card-5 card-5";
+  grid-template-columns: repeat(4, minmax(min-content, 256px));
+  grid-template-rows: 323px 247px 247px;
+  gap: 32px;
+
+  .card {
+    border-radius: 10px;
+  }
+}
+
+h1, .title-2, .title-3, .title-4 {
+  line-height: 95%;
+  font-weight: 500;
+}
+
+.title-2 {
+  font-size: 40px;
+}
+
+.title-3 {
+  font-size: 35px;
+}
+
+.title-4 {
+  font-size: 30px;
+}
+
+img {
+  width: 100%;
+}
+
+.italicText {
+  font-style: italic;
+}
+
+#card-1 {
+  grid-area: card-1;
+  background-color: var(--purple500);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 60px;
+    text-align: center;
+    color: var(--white);
+
+    .colorText {
+      color: var(--yellow500);
+    }
+  }
+
+  .image {
+    max-width: 190px;
+    margin: 22px 0 0;
+  }
+
+  p {
+    color: var(--yellow100);
+  }
+}
+
+#card-2 {
+  grid-area: card-2;
+  background-color: var(--white);
+  padding: 24px 0 24px 24px;
+
+  .image {
+    background: url('../../images/illustration-multiple-platforms.webp') top left no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 68px;
+  }
+
+  .title-4 {
+    margin-top: 20px;
+    margin-right: 24px;
+  }
+}
+
+#card-3 {
+  grid-area: card-3;
+  background-color: var(--yellow500);
+  padding: 24px 24px 0 24px;
+
+  .image {
+    background: url('../../images/illustration-consistent-schedule.webp') top left no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 94px;
+    margin-top: 14px;
+  }
+}
+
+#card-4 {
+  grid-area: card-4;
+  background-color: var(--purple100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 32px;
+
+  .image {
+    background: url('../../images/illustration-schedule-posts.webp') top left no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 318px;
+    margin: 24px 0 26px;
+  }
+
+  p {
+    margin-right: 30px;
+    line-height: 115%;
+  }
+}
+
+#card-5 {
+  grid-area: card-5;
+  background-color: var(--purple500);
+  display: flex;
+  align-items: center;
+  padding: 22px 24px;
+  gap: 12px;
+
+  .image {
+    flex: 1;
+    width: 100%;
+    max-width: 228px;
+  }
+
+  .title-2 {
+    flex: 1;
+    line-height: 90%;
+    color: var(--white);
+  }
+}
+
+#card-6 {
+  grid-area: card-6;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px 24px 20px;
+
+  .percent {
+    font-size: 60px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 180px;
+  }
+}
+
+#cardGroup {
+  grid-area: cardGroup;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  .card {
+    flex: 1;
+  }
+}
+
+#card-7 {
+  background-color: var(--yellow100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 416px;
+  padding: 0 33px;
+  gap: 22px;
+
+  .title-3 {
+    line-height: 105%;
+    margin-top: 6px;
+
+    .colorText {
+      color: var(--purple500);
+    }
+  }
+
+  .image {
+    width: 100%;
+    max-width: 190px;
+  }
+}
+
+#card-8 {
+  background-color: var(--yellow500);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 12px 20px 24px;
+
+  .title-3 {
+    margin-top: 28px;
+    margin-right: 24px;
+    line-height: 100%;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+// -------------------------- MEDIA QUERIES
+
+@media (max-width: 1024px) {
+
+  .container {
+    align-items: flex-start;
+    padding: 32px 16px;
+  }
+
+  .gridContent {
+    max-width: 544px;
+    grid-template-areas: "card-1 card-1"
+                         "card-2 card-4"
+                         "card-3 card-4"
+                         "card-5 card-5"
+                         "card-6 card-6"
+                         "cardGroup cardGroup";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  #card-1 {
+    padding: 40px 40px 38px;
+  }
+
+  #card-4 {
+    padding: 36px 0 28px 28px;
+  }
+
+  #card-6 {
+
+    .image {
+      margin-top: 20px;
+    }
+  }
+
+  #card-7 {
+    padding: 30px;
+  }
+
+  #card-8 {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+
+  .gridContent {
+    max-width: max-content;
+    grid-template-areas: "card-1"
+                         "card-2"
+                         "card-3"
+                         "card-4"
+                         "card-5"
+                         "card-6"
+                         "cardGroup";
+    grid-template-columns: 1fr;
+  }
+
+  .title-2, .title-3 {
+    font-size: 30px;
+  }
+
+  .title-4 {
+    font-size: 23px;
+  }
+
+  #card-1 {
+
+    h1 {
+      font-size: 46px;
+    }
+
+    .image {
+      margin: 20px 0 0;
+    }
+  }
+
+  #card-2 {
+    padding: 18px 0 18px 18px;
+
+    .image {
+      background-size: auto 66px;
+    }
+
+    .title-4 {
+      margin-top: 14px;
+    }
+  }
+
+  #card-3 {
+    padding: 20px 18px 0 18px;
+
+    .image {
+      background-size: 288px auto;
+      height: 138px;
+    }
+  }
+
+  #card-4 {
+    padding: 36px 16px 28px;
+    gap: 24px;
+
+    .title-4 {
+      text-align: center;
+    }
+
+    .image {
+      background-size: contain;
+      background-position: center;
+      height: 274px;
+    }
+
+    p {
+      margin: 0 10px;
+      text-align: center;
+    }
+  }
+
+  #card-5 {
+    flex-direction: column;
+    padding-bottom: 26px;
+    gap: 36px;
+
+    .title-2 {
+      text-align: center;
+      margin: 0 20px;
+    }
+  }
+
+  #card-6 {
+
+    .percent {
+      font-size: 46px;
+    }
+
+    .image {
+      margin-top: 24px;
+    }
+  }
+
+  #card-7 {
+    align-items: flex-start;
+
+    .title-3 {
+      margin: 0;
+      line-height: 95%;
+    }
+  }
+
+  #card-8 {
+    justify-content: flex-start;
+    padding: 18px 24px;
+
+    .title-3 {
+      margin: 0;
+    }
+  }
+}
